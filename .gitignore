@@ -1,8 +1,0 @@
-pkg/
-api.key
-*-handin.tar.gz
-.idea
-.DS_Store
-.check-build
-.gitignore
-Makefile
