@@ -11,8 +11,8 @@ package main
 //
 
 import (
-	"../mr"
 	"log"
+	"mr"
 	"plugin"
 )
 import "os"
@@ -36,6 +36,7 @@ func main() {
 func loadPlugin(filename string) (func(string, string) []mr.KeyValue, func(string, []string) string) {
 	p, err := plugin.Open(filename)
 	if err != nil {
+		fmt.Println(p, err)
 		log.Fatalf("cannot load plugin %v", filename)
 	}
 	xmapf, err := p.Lookup("Map")

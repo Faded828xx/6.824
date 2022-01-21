@@ -8,9 +8,11 @@ package main
 // 不采用分布式模型 无需master调度
 // 读文件 -> map() -> reduce() -> 写文件
 
-import "fmt"
+import (
+	"fmt"
+	"plugin"
+)
 import "mr"
-import "plugin"
 import "os"
 import "log"
 import "io/ioutil"
@@ -70,6 +72,7 @@ func main() {
 	// call Reduce on each distinct key in intermediate[],
 	// and print the result to mr-out-0.
 	//
+	// 对intermediate用reduce函数进行处理 结果输出到文件
 	i := 0
 	for i < len(intermediate) {
 		j := i + 1

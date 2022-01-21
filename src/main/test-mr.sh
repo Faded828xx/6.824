@@ -3,7 +3,7 @@
 #
 # basic map-reduce test
 #
-
+# mac环境有点问题
 RACE=
 
 # uncomment this to run the tests with the Go race detector.
